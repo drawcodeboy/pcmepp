@@ -1,4 +1,14 @@
-# Improved Probabilistic Image-Text Representations (PCME++) (ICLR 2024)
+## Individual setup
+- 28 Jan, 2026: Anaconda setup
+```
+# Windows
+conda create -n pcmepp python=3.8
+conda activate pcmepp
+pip install -r requirements.txt # change fastapi==0.93.0 to fastapi (Cuz, it occurs dependency error)
+```
+- Does it need the cuda version torch? (Is it auto?)
+
+## Improved Probabilistic Image-Text Representations (PCME++) (ICLR 2024)
 
 Official Python implementation of PCME++ | [Paper](https://arxiv.org/abs/2305.18171) | [Project page](https://naver-ai.github.io/pcmepp/)
 
