@@ -161,12 +161,12 @@ def parse_config(config_fname: str,
         _print(f'overwriting configurations: {kwargs}', verbose)
 
     for arg_key, arg_val in kwargs.items():
-        keys = arg_key.split(delimiter)
+        keys = arg_key.split(delimiter) # if dataloader__data_path -> dataloader, data_path
         n_keys = len(keys)
 
         _config = config
         for idx, _key in enumerate(keys):
-            if n_keys - 1 == idx:
+            if n_keys - 1 == idx: # 마지막 원소가 되고, strict_cast가 True인 경우 typecast를 수행하는데, 왜지?
                 if strict_cast:
                     typecast = type(_config[_key])
                     _config[_key] = typecast(arg_val)
@@ -175,5 +175,6 @@ def parse_config(config_fname: str,
             else:
                 _config = _config[_key]
 
+    # 근데 config를 리턴하는 거면 _config로 만들어놓은 kwargs로 들어온 configuration은 무시되는 거 아닌가
     config = munch.munchify(config)
     return config

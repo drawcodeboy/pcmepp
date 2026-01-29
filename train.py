@@ -150,6 +150,5 @@ def main(config_path, load_from_checkpoint=None, **kwargs):
         model.eval_by_swa = True
         trainer.validate(model, val_loader)
 
-
 if __name__ == '__main__':
     fire.Fire(main)
