@@ -1,2 +1,4 @@
 push test on server
 without vscode
+without local config
+remove local config
