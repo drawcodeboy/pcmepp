@@ -1,0 +1,3 @@
+run.sbatch
+logs/
+**/__pycache__/**
