@@ -1,17 +1,11 @@
 ## Individual setup
 - 28 Jan, 2026: Anaconda setup
 ```
-# Windows
-conda create -n pcmepp python=3.8
-conda activate pcmepp
-pip install -r requirements.txt # change fastapi==0.93.0 to fastapi (Cuz, it occurs dependency error)
-
 # Linux
 conda create -n pcmepp python=3.10
 conda activate pcmepp
 pip install -r requirements.txt
 ```
-- Does it need the cuda version torch? (Is it auto?)
 
 ## Improved Probabilistic Image-Text Representations (PCME++) (ICLR 2024)
 

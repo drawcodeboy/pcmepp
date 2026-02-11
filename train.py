@@ -16,7 +16,7 @@ from lightning.pytorch.callbacks.early_stopping import EarlyStopping
 from lightning.pytorch.strategies import DDPStrategy
 
 from config import parse_config
-from logger import PCMEPPLogger
+from logger import PCMEPPLogger, PCMEPPLogger_Wandb
 
 from pcmepp.datasets import get_loaders, get_test_loader
 from pcmepp.engine import PCMEPPModel
@@ -127,9 +127,10 @@ def main(config_path, load_from_checkpoint=None, **kwargs):
     trainer = pl.Trainer(
         strategy=strategy,
         callbacks=callbacks,
-        logger=PCMEPPLogger(
+        logger=PCMEPPLogger_Wandb(
             save_dir=os.path.join(root_dir, 'logs'),
-            default_hp_metric=False
+            project_name="PCMEPP",
+            # default_hp_metric=False
         ),
         precision=config.train.precision,
         gradient_clip_val=config.train.grad_clip,

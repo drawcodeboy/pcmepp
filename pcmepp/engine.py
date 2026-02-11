@@ -38,6 +38,7 @@ from pcmepp.evaluation import eval_coco_test_loader, eval_coco_uncertainty
 
 from pcmepp.dist import grad_all_gather
 
+ON_STEP = True
 
 class PCMEPPModel(pl.LightningModule):
     def __init__(self, opt):
