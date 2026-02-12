@@ -129,7 +129,7 @@ def main(config_path, load_from_checkpoint=None, **kwargs):
         callbacks=callbacks,
         logger=PCMEPPLogger_Wandb(
             save_dir=os.path.join(root_dir, 'logs'),
-            project_name="PCMEPP",
+            project="PCMEPP",
             # default_hp_metric=False
         ),
         precision=config.train.precision,

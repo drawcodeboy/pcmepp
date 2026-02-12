@@ -38,8 +38,8 @@ class PCMEPPLogger(TensorBoardLogger):
         print(f"{datetime.now()} {step=} {metrics=}")
 
 class PCMEPPLogger_Wandb(WandbLogger):
-    def __init__(self, save_dir, project_name, **kwargs):
-        super().__init__(save_dir=save_dir, project_name=project_name,**kwargs)
+    def __init__(self, save_dir, project, **kwargs):
+        super().__init__(save_dir=save_dir, project=project,**kwargs)
 
     @rank_zero_only
     def log_metrics(self, metrics: Dict[str, float], step: Optional[int] = None) -> None:

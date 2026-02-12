@@ -1,3 +1,4 @@
-run.sbatch
+*.sbatch
 logs/
 **/__pycache__/**
+results/
