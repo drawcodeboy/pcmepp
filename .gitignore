@@ -1,4 +1,5 @@
-*.sbatch
+sbatch/
 logs/
 **/__pycache__/**
 results/
+lightning_logs/

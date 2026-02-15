@@ -418,6 +418,7 @@ def get_loader(data_path, data_name, data_split, tokenizer, opt, vocab_size=None
                                                   num_workers=num_workers,
                                                   drop_last=drop_last)
     else:
+        # PCME++는 opt.mode.precomp_enc_type이 backbone으로 설정
         dset = RawImageDataset(data_path, data_name, data_split, tokenizer, opt, train, vocab_size, noise_ratio=noise_ratio)
         data_loader = torch.utils.data.DataLoader(dataset=dset,
                                                   batch_size=batch_size,
